@@ -1,0 +1,117 @@
+.container {
+  justify-content: center;
+  align-items: center;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+  font-family: 'Open Sans', sans-serif;
+}
+
+/* ez egy túl általános szabály
+h3{
+  margin-top: 60px;
+}*/
+
+#card-holder {
+  display: flex;
+  /*  works on the main axis  */
+  justify-content: space-between;
+}
+
+.card {
+  background-color: #3cb878;
+  width: 180px;
+  text-align: center;
+  color: white;
+  padding: 20px 0;
+  box-shadow: 5px 5px gray;
+}
+
+
+
+
+
+
+
+.card h3 {
+  margin-bottom: 0;
+}
+
+.sign-up-form{
+  color: grey;
+  border: solid thin #cfcfcf;
+  border-radius: 3px;
+  padding: 10px;
+  margin-top: 40px;
+  padding-bottom: 20px; /*adoboz alsó szélétől feljebb legyen minden*/
+  position: relative; /*minden benne lévő elem hozzá képest relatív poziciójú*/
+}
+.sign-up-form h3 {
+  margin-top: 0;
+}
+
+
+/*
+.sign-up-form h3.second {
+  color: green;
+}
+/*az id alapján specifikusabban választ ki*/
+/*.sign-up-form h3#second { 
+  color: red;
+}
+*/
+.sign-up-form button {
+  background-color: #3cb878;
+  border: none;
+  color: white;
+  display: block;
+  width: 100%;
+  heigth: 30px;
+  margin-bottom: 10px;
+}
+.sign-up-form input#email {
+  display: block;
+  width: 100%; /*csatlakozik a box-sizing-hoz*/
+  height: 30px;
+  margin-bottom: 4px;
+  border: 1px solid #cfcfcf;
+  border-radius: 3px;
+  box-sizing: border-box; 
+  /*a méretszámításnál kihagyja a padding-et és a bordert*/
+  /*box-sizing: content-box; ez a border-box ellentéte*/
+}
+.sign-up-form #terms {
+  position: relative; 
+  /*minden benne lévő elem hozzá képest relatív poziciójú*/
+  /*ahhoz képest, ahová kerülne, szeretném 1px-lel elmozdítani*/
+  top: 1px;
+}
+.sign-up-form #closex {
+  position: absolute; 
+   top: 0;
+  right: 4px;
+  /*ezzel kivettük az x-et a html folyamból és*/
+  /*oda pakoljuk, ahová akarjuk*/
+  /*a szülő-boxnál pedig position: relative; kell*/
+}
+
+#questionmark {
+  /*fixed pozicionálás*/
+  background-color: #3cb878;
+  color: white;
+  font-size: 70px;
+  text-align: center;
+  width: 100px;
+  height: 100px;
+  border-radius: 50%; /*teljes kerekítés*/
+  position: fixed;
+  right: 10px;
+  bottom: 10px;
+  text-decoration: none;
+}
+#questionmark:hover {
+  color: red;
+}
+a:hover {
+  color:coral;
+}
