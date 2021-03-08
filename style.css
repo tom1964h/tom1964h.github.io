@@ -7,8 +7,10 @@
   font-family: 'Inknut Antiqua', serif;
   
   background-color: black;
-  background-image: url("https://lumiere-a.akamaihd.net/v1/images/Death-Star-I-copy_36ad2500.jpeg?region=0%2C31%2C1600%2C800");
-  
+  /*background-color: linear-gradient(to bottom, black, lightgray);*/
+
+  /*background-image: url("https://lumiere-a.akamaihd.net/v1/images/Death-Star-I-copy_36ad2500.jpeg?region=0%2C31%2C1600%2C800"), linear-gradient(to bottom, black, gray);*/
+  /*background-image: url("https://lumiere-a.akamaihd.net/v1/images/Death-Star-I-copy_36ad2500.jpeg?region=0%2C31%2C1600%2C800"), https://get.pxhere.com/photo/sky-night-milky-way-cosmos-atmosphere-shooting-star-galaxy-nebula-outer-space-astronomy-stars-astronomical-object-913369.jpg;*/
   background-repeat: no-repeat;
   
 }
