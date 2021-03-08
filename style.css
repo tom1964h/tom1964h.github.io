@@ -1,0 +1,146 @@
+#container {
+  display: flex;
+  flex-direction: column;
+  min-height: 1400px;
+  margin-left: 200px;
+  margin-right: 200px;
+  font-family: 'Inknut Antiqua', serif;
+  
+  background-color: black;
+  background-image: url("https://lumiere-a.akamaihd.net/v1/images/Death-Star-I-copy_36ad2500.jpeg?region=0%2C31%2C1600%2C800");
+  
+  background-repeat: no-repeat;
+  
+}
+nav {
+  background-color: rgb(61, 61, 61);
+  height: 80px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+main {
+  height: 320px;
+}
+a {
+  margin: 0 20px 0 20px;
+  color: white;
+  font-size: 30px;
+  text-decoration: none;
+}
+a:hover {
+  color: red;
+  font-size: 31px;
+}
+a:visited {
+  font-size: 29px;
+}
+main {
+  display: flex;
+  /*flex-wrap: wrap;*/
+  flex-direction: row;
+   position: relative;
+  font-family: 'Inknut Antiqua', serif;
+  padding: 0;
+}
+img {
+  max-height: 500px;
+  overflow: hidden;
+  width: 530px;
+}
+.title1 {
+  position: absolute;
+  top: 150px;
+  left: 20px;
+  font-size: 25px;
+  color: red;
+  margin: 0;
+}
+.title2 {
+  position: absolute;
+  top: 150px;
+  left: 20px;
+  font-size: 80px;
+  text-shadow: 2px 2px red;
+  margin: 0;
+}
+aside {
+  font-family: 'Nanum Gothic', sans-serif;
+  /*background-image: url("https://lumiere-a.akamaihd.net/v1/images/Death-Star-I-copy_36ad2500.jpeg?region=0%2C31%2C1600%2C800");
+  background-color: white;*/
+  font-size: 18px;
+  color: white;
+  width: 600px;
+  padding: 20px;
+  margin-left: 15px;
+}
+
+li {
+  margin: 5px;
+}
+#content {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  background-image: https://media.npr.org/assets/img/2020/08/27/nasa-goods-real_wide-9168d715c2d4c488d7a0e594b397d7abdd969d9d-s800-c85.png;
+}
+article {
+  /*height: 200px;*/
+  width: 550px;
+  margin: 10px;
+  font-family: 'Nanum Gothic', sans-serif;
+  font-size: 12px;
+  line-height: 180%;
+  color: white;
+  /*border: 2px solid yellow;*/
+}
+.citation {
+  font-family: 'Inknut Antiqua', serif;
+  width: 550px;
+  padding-left: 20px;
+  font-size: 25px;
+  
+  background-color: gray;
+  color: red;
+  /*margin-top: 60px;*/
+  /*line-height: 200%;*/
+}
+h1 {
+  font-family: 'Inknut Antiqua', serif;
+  font-size: 28px;
+  background-color: gray;
+  color: white;
+  padding: 15px;
+  line-height: 150%;
+  opacity: 0.7;
+}
+
+h2 {
+  text-transform: uppercase;
+  /*font-size: 30px;*/
+  letter-spacing: 0.097em;
+}
+h3{
+  /*margin-top: 40px;*/
+  margin-top: 0;
+  margin-bottom: 0;
+  /*font-size: 22px;*/
+  letter-spacing: 0.106em;
+}
+h4 {
+  font-style: italic;
+  margin-top: 0;
+  /*font-size: 18px;*/
+}
+#pi {
+  font-size: 20px;
+}
+#lenia {
+  border: 2px solid rgb(207, 197, 197);
+  width: 550px;
+}
+em {
+  color:crimson;
+}
