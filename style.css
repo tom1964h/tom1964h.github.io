@@ -1,7 +1,7 @@
 body {
  color: black;
  font-family: calibri;
- font-size: 2vw;
+ font-size: 2.5vw;
  margin: 0 auto;
  padding: 0.5vw;
 }
@@ -17,18 +17,16 @@ body {
 	background-color: Navy;
 	align-items: center;
 	padding: 0.5vw;
-	font-size: 2vw;
+	font-size: 2.5vw;
 	color: white;
 }
 
 h1, h2, h3 {
 	margin: 0;
 	padding: 0.5vw;
+	font-size: 3vw;
 }
 
-article {
-	font-size: 1.5vw;
-}
 
 p {
 	margin: 0vw;
@@ -77,21 +75,4 @@ button{
 	font-family: Lucida Console;
 }
 
-table, th, td {
-	border: 1px solid black;
-}
 
-table {
-  border-collapse: collapse;
-  border-spacing: 0;
-  width: 100%;
-  border: 1px solid #ddd;
-  overflow-x:auto;
-}
-
-th, td {
-  text-align: left;
-  padding: 8px;
-}
-
-tr:nth-child(even){background-color: #f2f2f2}
