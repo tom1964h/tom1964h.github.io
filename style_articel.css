@@ -24,13 +24,8 @@ body {
 	border-color: Navy;
 }
 
-h1 {
-	margin: 0;
-	padding: 0.5vw;
-	font-size: 3vw;
-}
-
-h2, h3 {
+h1, h2, h3 {
+	color: Navy;
 	margin: 0;
 	padding: 0.5vw;
 	font-size: 2.5vw;
@@ -93,4 +88,7 @@ button{
 	font-family: Lucida Console;
 }
 
-
+.mxgraph {
+	margin: 0 auto;
+	align-items: center;
+}
