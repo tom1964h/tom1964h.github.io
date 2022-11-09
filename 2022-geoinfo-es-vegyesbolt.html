@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:fb="http://ogp.me/ns/fb#">
+<html lang=HU>
+ <head>
+ <meta charset="UTF-8">
+ <meta name="keywords" content="statisztika, adatelemzés, gyógyszertámogatás, nyilvános adat,  gyógyszertár, adatfeldolgozás, OEP, NEAK, big data, Pandas, Jupyter, Power BI, SQlite, Datawrapper, market, report, pharma, áruforgalom, statistics, data analysis, pharmaceutical support, public data, pharmacy, data processing, OEP, NEAK, big data, Pandas, Jupyter, Power BI, SQlite, Datawrapper, market, report, pharma, goods traffic">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <meta property="og:image" content="https://tom1964h.github.io/pexels-cottonbro-8667546-index.jpg" />
+ <title>Jolikákról és egyéb ...</title>
+ <link rel="stylesheet" type="text/css" href="style_articel.css">
+ <link rel="icon" href="favicon-16x16.png" type="image/gif" sizes="16x16">
+ </head>
+<body>
+<div id="container">
+ <header class="fejlec">
+  <h1>A Jolikán kívüli dolgok természete és a kannibál járások esete a vesztesekkel</h1>
+</header>
+<button type="button"><a href="index.html">return</a></button>
+<div class="box">
+<h2>Mi ez a zagyva cím?</h2>
+<p><em>2022. november 8.</em></p>
+<p>Habár úgy tűnhet, sikerült a novemberi ködnek megzavarnia a szerző elméjét és afféle Agatha Chritie epigonként tovább gyarapítja majd a "ZS"-kategóriás filléres krimik halmazát (pedig, ha jól sikerült, még egy <em>ponyvaregény</em> is érdekes olvasmány). Nos, nem. Csak sikerült olyan mértékben lerövidítenem az eredeti cimet, hogy már-már szép lett.</p>
+<p>Az ilyen esztelen rövidítések sokszor nevetséges helyzeteket szülnek, például, amikor leltározik valaki és a 127-ik szemránckrémet próbálja megszámolni és beírni a listára, ahol csak ez szerepel: "Vich.sz.r.kr. kicsi 723-as ...JOLIKA MAJD EZT JAVISTAD!" ... (itt kérek elnézést minden Jolikától).</p>
+<p>Hogy pontosan miről is szól ez az elemzés:</p>
+<ul>
+  <li>a gyógyszertáron kívüli gyógyszerforgalmazás jellemzése a hozzáférhető adatok alapján: termékkör, területi eloszlás bemutatása;</li>
+  <li>járási szintű elemzés a 2020 évi OEP Statisztikai Évkönyv alapján, a területi nyereség/veszteség meghatározása, jellemzése.</li>
+</ul>
+<p>Az látszik, hogy ilyen hosszú, kétrészes címet legyömöszölni az olvasók torkán lehetetlen vállalkozás lenne. ... Maradjunk a kannibál járásoknál.</p>
+<p>Ne feledjük: jelen elemzés magánvéleményt tartalmaz!</p>
+<p></p>
+<details open>
+    <summary><h2>Domain-tudás 1: gyógyszertáron kívüli gyógyszerek</h2></summary>
+    <p>A gyógyszertáron kívüli gyógyszerforgalmazás fogalma első pillanatban fából vaskarikának tűnik (gyógyszert csak gyógyszertárból!). Azonban néhány (329 db) termékkel kapcsolatban mégis keletkezett jogszabályi felmentés arra, hogy ezeket nem csak patikákban, hanem a kiskereskedelemben is forgalmazhassák.<br> A "gyógyszert csak gyógyszertárból" kérdéskörben nem szeretnék állást foglalni, pusztán a helyzet bemutatására törekszem.<br></p>
+	<p>A témában számos remek cikk született (lásd, pl. www.hgysz.hu oldal blogposztját <a href="https://hgysz.hu/blog/gyogyszertaron-kivuli-gyogyszerforgalmazas-allami-tamogatassal/" target="_blank" rel="noopener noreferrer">"Gyógyszertáron kívüli gyógyszerforgalmazás állami támogatással"</a> címmel).</p>
+	<p>A mérvadó adatforrás az Országos Gyógyszerészeti és Élelmezés-egészségügyi Intézet hivatalos honlapja:
+	<ul>
+  <li>a <a href="https://ogyei.gov.hu/gyogyszertaron_kivuli_gyogyszerforgalmazas" target="_blank" rel="noopener norefer">"Gyógyszertáron kívüli gyógyszerforgalmazás"</a> remek összefoglaló és adatforrás a forgalmazható termékkörről;</li>
+  <li>a <a href="https://ogyei.gov.hu/gyogyszertarkereso&action=search&csrft=7c29a3efa4e926824368c0ecfd758d43" target="_blank" rel="noopener norefer">"Gyógyszertár-kereső"</a> oldalon pedig a kiadott forgalmazási engedélyeket is megnézhetjük</li>
+</ul>
+A módszertan a következő: a rendelkezésre álló két adatforrás alapján be kell mutatni, mit és hol forgalmazhatnak gyógyszertáron kívül Magyarországon. Sajnos konkrét forgalmi adatok nem állnak rendelkezésre, pedig azok is érdeklődésre tarthatnának számot.</p>
+</details>
+<br>
+<details open>
+    <summary><h2>Domain-tudás 2: a járási kannibalizmusról</h2></summary>
+<p>A gyógyszer (köz-)finanszírozásról havi felösszegzett tény-adatokat a <b>NEAK</b> (és elődje az OEP) régebb óta tesz közzé. Ezek az adatok a honlapon havonta frissülő listában elérhetőek. Ezen adatok termék- és jogcím-szintű, de (közigazgatási) megyei és havi részletességű adatokat tartalmaznak. Ezen kívül, a NEAK évek óta készít saját hatáskörben (jogszabályi feladatainak részeként) statisztikai összefoglalókat, kiskönyveket, amelyek precíz szakmai kiadványok.</p>
+<p>A legfrissebb, 2020-as évjáratú Statisztikai Évkönyvet vettem alapul, amelyben (a NEAK publikus havi statisztikáinál) részletesebb adatok is szerepelnek: (közigazgatási) <b>járási szintű</b> területi részletezés, <b>nemek</b> (férfiak és nők) szerinti részletezés, illetve <b>korcsoportok</b> (szám szerint 9) szerinti részletezés is elérhető. Ez a rendszeres (havi) adatközléshez képest 3 új dimenzió. Van egy negyedik dimenzió is a történetben, ez pedig a <b>kiváltás / kiváltó lakhelye</b> szerinti részletezés:
+<ul>
+  <li>a <b>kiváltás helye</b> arra a járásra mutat, ahol a gyógyszerkiváltás megtörtént, amely járásban az adott patika található;</li>
+  <li>a <b>kiváltó lakhelye</b> arra a járásra mutat, ahol a gyógyszert kapó személy lakik (TAJ-száma alapján beazonosítva).</li>
+</ul>
+A fenti két adat egy adott járásra vetítve megmutathatja:
+<ul>
+  <li>ha egy adott járásban lévő patikákban több vényt váltottak ki, mint ahány (a járásban lakó) ember kapott gyógyszert abban az időszakban, akkor az csak úgy lehet, hogy még a szomszéd járásból is átjönnek az emberek vényt kiváltani ebbe a járásba (mert pl. ez egy megyeszékhely, jobban ellátott patikákkal) - értelemszerűen az átjövő emberek az ottani patikákból hiányoznak majd :: ezek a járások a <b>kannibál járások</b>, mert <em>a szomszédból is elszívnak vásárlókat</em>;</li>
+  <li>ha egy adott járás patikáiban fordított a helyzet, mert kevesebb vényt váltottak ki a helyi patikákban, mint ahány vényt az ott lakók kiváltottak, akkor azok a járások folyamatosan <b>vesztesek</b>, mert <em>a szomszéd elvonja a vásárlókat</em>.</li>
+</ul>
+A csavar ott jön még, hogy nemcsak kiváltott vények száma alapján, hanem a kiváltott gyógyszerek összértéke alapján is számolhatunk. Ekkor viszont előfordulhat, hogy egy <b>vesztes járás valójában pedig nyertes</b>: mert meglehet, hogy a szomszéd járásban több vényt váltottak ki, mint náluk, <em>de a nagyértékű gyógyszereket mégiscsak otthon váltották ki</em>. Azaz kevesebb munkával nagyobb forgalmat értek el. Az árrésbevételről itt ne beszéljünk, mert az megintcsak megborítaná a képletet.
+</p>
+<p>Tekintve, hogy a forrásadatok Excel-formátumban, szerkesztett formában állnak rendelkezésre, ésszerű ráfordítással csak a járási szintű adatok vizsgálata értelmes, a nemek és a korcsoportok, illetve a jogcímek szerinti alábontások elérése meghaladják ezen projekt kereteit.</p>
+<p>Ha eddig tudtak követni, a többi gyerekjáték lesz.</p>
+</details>
+<br>
+<h2>A gyógyszertáron kívüli gyógyszerforgalmazásról (2022 novembere)</h2>
+<p>AZ OGYEI honlapról letöltött 329 tételes terméklistát elemezve jól látható, hogy a szabályozás célja a banális, egyszerű, közismert tünetek enyhítése, az öngyógyítás segítése volt.</p> <br>
+<iframe title="Gyógyszertáron kívül mit vásárolhatok?" aria-label="Donut Chart" id="datawrapper-chart-5v7od" src="https://datawrapper.dwcdn.net/5v7od/3/" scrolling="no" frameborder="0" style="width: 0; min-width: 100% !important; border: none;" height="557" data-external="1"></iframe><script type="text/javascript">!function(){"use strict";window.addEventListener("message",(function(e){if(void 0!==e.data["datawrapper-height"]){var t=document.querySelectorAll("iframe");for(var a in e.data["datawrapper-height"])for(var r=0;r<t.length;r++){if(t[r].contentWindow===e.source)t[r].style.height=e.data["datawrapper-height"][a]+"px"}}}))}();</script>
+<p>A 329 készítményt 16 csopotba soroltam be. Az első hatot a kördiagramon láthatjuk. További csoportok a savlekötők, az emésztést elősegítők, a hasfogók és a hashajtók, vannak felfázásban és aranyérhez használható szerek, vannak szájápoló készítmények és a torokfájás elleni szopogató tabletták, továbbá orrsprayk is. Van néhány készítmény arra hogy megnyugodjunk és jobban aludjunk. Nem maradtak ki a vitaminok és az ásványi anyagok sem; és végül a mindenre jó svédcsepp. Amúgy pedig tényleg mindenre jó.</p>
+<p>Érdekes, hogy 44 homeopátiás termék is elérhető ezen a módon, azaz bioboltokban, természetgyógyászati műhelyekben és drogériákban is legálisan lehet ezeket forgalmazni. Ezek a termékek nullánál nagyobb forgalmúak egy-egy közforgalmú gyógyszertárban is, bár mértékük nem számottevő. Viszont lehetővé teszik a homeopátiás gyógyszereket használók számára az alternatív beszerzési források elérését is.</p> <br>
+<iframe title="Gyógyszertáron kívül hol?" aria-label="Bar Chart" id="datawrapper-chart-gSCm8" src="https://datawrapper.dwcdn.net/gSCm8/1/" scrolling="no" frameborder="0" style="width: 0; min-width: 100% !important; border: none;" height="303" data-external="1"></iframe><script type="text/javascript">!function(){"use strict";window.addEventListener("message",(function(e){if(void 0!==e.data["datawrapper-height"]){var t=document.querySelectorAll("iframe");for(var a in e.data["datawrapper-height"])for(var r=0;r<t.length;r++){if(t[r].contentWindow===e.source)t[r].style.height=e.data["datawrapper-height"][a]+"px"}}}))}();</script>
+<p>A falusi kisboltok és tanyaközpontok ellátását felejtsük el. A nagy drogéria-láncok (és számos kisebb drogéria és biobolt), a nem kevéssé fajsúlyos szupermarket láncok, és nem utolsó sorban a benzinkutak (amelyek jelentős része MOL érdekeltség) felé kerültek engedélyek kiadásra. A "vegyesboltok" a teljes szám 11 %-át képviselik.</p>
+
+<p>Azt tehát láthatjuk, hogy nem a tőkeszegény vállalkozások pezsegnek a szcénában, amelyek minden bizonnyal termékkör-bővítési szándékkal váltották ki az engedélyt ezekre a termékekre. Mondjuk a DM és a Rossmann esetében nem teljesen rendszeridegen a gyógyszerek köre, hiszen eddig is forgalmaztak étrendkiegészítőket.</p><br>
+<iframe title="Gyógyszerforgalmazás patikán kívül" aria-label="Map" id="datawrapper-chart-pcURo" src="https://datawrapper.dwcdn.net/pcURo/1/" scrolling="no" frameborder="0" style="width: 0; min-width: 100% !important; border: none;" height="457" data-external="1"></iframe><script type="text/javascript">!function(){"use strict";window.addEventListener("message",(function(e){if(void 0!==e.data["datawrapper-height"]){var t=document.querySelectorAll("iframe");for(var a in e.data["datawrapper-height"])for(var r=0;r<t.length;r++){if(t[r].contentWindow===e.source)t[r].style.height=e.data["datawrapper-height"][a]+"px"}}}))}();</script>
+<p>Régiónként nagyjából egyenletesen elosztva kerültek az engedélyek kiadásra, a legkevesebb Észak-Magyaországra került, a legtöbb engedély a legnagyobb vásárlóképességű Közép-Magyarországon landolt (Budapest és Pest megye együtt 371)(a térkép interaktív, klikkelhető). Szóval a tőkeerő mellett a vásárlóerő is gravitálta a területi eloszlást. De nézzük meg a megyei és a járási adatokat is: a kép tovább pontosítja majd a két elvet.</p>
+<p>Országosan összesen 1229 gyógyszertáron kívüli forgalmazói helyre adtak ki engedélyt. Ezen kívül 160 orvosnál van engedélyezve kézigyógyszertár, továbbá 2989 közforgalmú gyógyszertár, fiókgyógyszertár és KZGYT szolgálja a gyógyszerellátást.</p>
+<iframe title="Gyógyszertárak aránya a gyógyszerellátásban" aria-label="Map" id="datawrapper-chart-l1Vkk" src="https://datawrapper.dwcdn.net/l1Vkk/1/" scrolling="no" frameborder="0" style="width: 0; min-width: 100% !important; border: none;" height="525" data-external="1"></iframe><script type="text/javascript">!function(){"use strict";window.addEventListener("message",(function(e){if(void 0!==e.data["datawrapper-height"]){var t=document.querySelectorAll("iframe");for(var a in e.data["datawrapper-height"])for(var r=0;r<t.length;r++){if(t[r].contentWindow===e.source)t[r].style.height=e.data["datawrapper-height"][a]+"px"}}}))}();</script>
+<p>Az országos adatok erősen ingadozva oszlanak meg megyei szinten (ez a térkép is interaktív, klikkelhető!). Bács, Csongrád, Heves és Szabolcs megyékben a gyógyszertárak aránya ebben a körben több, mint 76 %. Somogy, Vas, Veszprém és Zala megyékben viszont a gyógyszertárak kevesebb, mint 61 %-ban vesznek részt a megye gyógyszerellátásából.</p>
+
+<br><br>
+
+<h2>A gyógyszertárak vénykiváltása (2020 éves adat)</h2>
+<br>
+<iframe title="Átlagosan egy patikában 2020-ban beváltott vények száma járásonként" aria-label="Map" id="datawrapper-chart-dzwXT" src="https://datawrapper.dwcdn.net/dzwXT/2/" scrolling="no" frameborder="0" style="width: 0; min-width: 100% !important; border: none;" height="535" data-external="1"></iframe><script type="text/javascript">!function(){"use strict";window.addEventListener("message",(function(e){if(void 0!==e.data["datawrapper-height"]){var t=document.querySelectorAll("iframe");for(var a in e.data["datawrapper-height"])for(var r=0;r<t.length;r++){if(t[r].contentWindow===e.source)t[r].style.height=e.data["datawrapper-height"][a]+"px"}}}))}();
+</script>
+<p>Az interaktív térképen járásonként láthatjuk az egy patikára jutó éves, 2020-as beváltott vények számát. Ez az átlag természetesen eltérhet az egyéni patikai átlagoktól.</p>
+<p>A legkisebb átlaga (15 ezer vény/patika/év) a cigándi járás patikáinak van, amely az északkeleti határszélen fekszik a Bodrogközben (déli oldalánál folyik a Tisza folyó (amelyen híd vezet át, a túloldalon Kisvárda). Valószínüleg a közeli Sátoraljaújhelynek tulajdonítható ez az elszívó hatás, ahol viszont kiemelkedően magas, közel 87 ezer vény/patika/év ez a viszonyszám.</p>
+<p>Az egy patikára jutó átlagos éves vénykiváltási viszonyszám maximuma (2020) a <b>gyáli</b> járásban van, ahol több, mint 100 ezer vényt váltottak ki patikánként 2020-ban átlagosan (errefelé 7 patika van). Ha megnézzük a budapesti agglomerációt, akkor egy érdekes jelenségnek lehetünk tanúi.</p> 
+<p>Ez a jelenség a <b>fánkosodás</b>: Budapest lakossága kiköltözik. A HVG cikke hívta fel erre pl. a figyelmet (<a href="https://www.vg.hu/vilaggazdasag-magyar-gazdasag/2022/10/tovabb-fankosodik-a-fovaros-fogyatkozik-a-kozepe" target="_blank" rel="noopener norefer">"Tovább fánkosodik Budapest, fogyatkozik a közepe"</a>). A megnövekedett lakosságszám hozadéka a szolgáltatói rendszer (és benne a gyógyszerellátás) nagyobb terhelése. De nemcsak itt magas a viszonyszám: körben a dunakeszi, gödöllői, vecsési, gyáli, szigetszentmiklósi, érdi járásokban is jóval magasabb a patikai vény-átlag, mint nagy-Budapesten. A budakeszi átlag megegyezik a pestivel, egyedül a pilisvörösvári és a szentendrei átlagok alacsonyabbak, mint a pesti.</p> 
+<p>Mintha fordított lenne a helyzet Győr-Moson-Sopron megyében. Itt a győri átlag alacsony, és a megyei közepén fekvő két kisebb  járás (Csorna és Kapuvár) átlaga sokkal magasabb. Igaz, mert hiába magas a győri kiváltott vény-darabszám (kb. 3 millió) mindez szétosztódik 55 patikára. A csornai járásban ezzel szemben csak 9 patika, a kapuvári járásban pedig csak 6 patika van. Jobb az arányszám. Nem beszélve a mosonmagyaróvári (27 patika) és a soproni (35 patika) átlagokról, ahol az arányok még a győrinél is gyengébbek.</p> 
+<h2>A járások nyertes vagy vesztes helyzete - vénydarabszám szerint</h2>
+<br>
+<iframe title="A járások patikáiban beváltott és a járási lakosok által beváltott vények számának különbsége" aria-label="Map" id="datawrapper-chart-TVErE" src="https://datawrapper.dwcdn.net/TVErE/3/" scrolling="no" frameborder="0" style="width: 0; min-width: 100% !important; border: none;" height="598" data-external="1"></iframe><script type="text/javascript">!function(){"use strict";window.addEventListener("message",(function(e){if(void 0!==e.data["datawrapper-height"]){var t=document.querySelectorAll("iframe");for(var a in e.data["datawrapper-height"])for(var r=0;r<t.length;r++){if(t[r].contentWindow===e.source)t[r].style.height=e.data["datawrapper-height"][a]+"px"}}}))}();
+</script>
+<p>Érdekesen mutatja meg a rejtett viszonyokat ez a térkép. A zöld (vagy zöldes színű) járások vénybeváltási egyenlege pozitív (a cikk elején kannibálnak neveztem ezeket). A pink (vagy rózsaszín) színű járások vénybeváltási egyenlege negatív (ezeket neveztem a cikk elején vesztes jásároknak). Néhány érdekesség:
+<ul>
+  <li>a legdurvábban veszteséges a kiváltott vények szempontjából (ebben a térképi ábrázolásban egy egységként kezelt) Budapest, ahol összességében -3 millió vény a 2020-as éves beváltási egyenleg;</li>
+  <li>szép példája a Budapest és az agglomeráció a fánkosodás jelenségének: a budapest átlag kerületi egyenleg gyengén veszteséges (- 132 ezer vény), az összes agglomerációs járás bőven nyereséges kannibál (a leggyengébb a szentendrei, a legerősebb a budakeszi járás +176 ezres számmal :: mindösszesen az agglomerációban 2020-ban +1,1 milliós vénybeváltási többlet keletkezett (a maradék 2 millió vény országosan oszlik el);</li>
+  <li>a -132 ezres budapesti kerületi átlagnál Szeged járás vesztesége jóval nagyobb, -192 ezer vény (igaz elmarad a járási negatív csúcsot tartó budapesti XI.kerület negatív rekordjától, amely -683 ezres veszteséget mutat és elmarad a XIV.kerület -496 ezres veszteségétől is;</li>
+  <li>a Balaton déli partja bőven nyereséges, ezt mutatja a fonyódi és a siófoki járás zöld színe;</li>
+    <li>szinte az összes nagyobb megyeszékhely veszteséges, kivéve pl. a nyíregyházi, a salgótarjáni, a nagykanizsai járásokat;</li>
+    <li>a nyíregyházi és a kisvárdai járások durván nyereségesek, igaz, a szomszédok arrafelé veszteségesek.</li>
+</ul>
+Láthatjuk tehát, hogy jelentős mozgások vannak az országban a járások között. Ezek napi szintű, ingázással, magasabb szintű egészségügyi ellátással összefüggő mozgások lehetnek.</p> <br>
+<iframe title="Budapest kerületi patikáinak vénybeváltási veszteségei 2020" aria-label="Map" id="datawrapper-chart-3zEDv" src="https://datawrapper.dwcdn.net/3zEDv/2/" scrolling="no" frameborder="0" style="width: 0; min-width: 100% !important; border: none;" height="727" data-external="1"></iframe><script type="text/javascript">!function(){"use strict";window.addEventListener("message",(function(e){if(void 0!==e.data["datawrapper-height"]){var t=document.querySelectorAll("iframe");for(var a in e.data["datawrapper-height"])for(var r=0;r<t.length;r++){if(t[r].contentWindow===e.source)t[r].style.height=e.data["datawrapper-height"][a]+"px"}}}))}();
+</script>
+<p>A budapesti átlag veszteségesnek mutatta Budapestet. Rázoomolva a fővárosra azonban kibontakozik a kerületi finomszerkezet. A dél-pesti, az észak-pesti kerületek, no meg a nyolcadik nyereséges. A többi kerület viszont jelentősen veszteségesek. Mintha a kerületi lakosok máshova járnának patikába. Vagy esetleg csak papíron laknak a kerületben, valójában máshol élnek.</p><br>
+<h2>A járások nyertes vagy vesztes helyzete - forintforgalom szerint</h2>
+<br>
+<iframe title="Járások patikák nyeresége/vesztesége (2020)" aria-label="Map" id="datawrapper-chart-M6C5v" src="https://datawrapper.dwcdn.net/M6C5v/2/" scrolling="no" frameborder="0" style="width: 0; min-width: 100% !important; border: none;" height="525" data-external="1"></iframe><script type="text/javascript">!function(){"use strict";window.addEventListener("message",(function(e){if(void 0!==e.data["datawrapper-height"]){var t=document.querySelectorAll("iframe");for(var a in e.data["datawrapper-height"])for(var r=0;r<t.length;r++){if(t[r].contentWindow===e.source)t[r].style.height=e.data["datawrapper-height"][a]+"px"}}}))}();
+</script>
+<p>Pénzügyileg vizsgálva a helyzetet fordul a kocka. Az összes megyeszékhely masszívan nyereséges: a nagyértékű gyógyszerek, a kiemelt terápiák magas forgalmat hoznak.</p>
+<p>A Budapest környéki "fánkosodás" már árnyaltabb képet mutat: egyes agglomerációs járások ebben a nézetben is nyereségesek: Érd, Gyál, Dunakeszi, Budakeszi. Más járások forintegyenlege viszont negatív: Szigetszentmiklós, Vecsés, Szentendre.</p>
+<p>Ha az összegeket nézzük, akkor kezeljük külön Budapest (és környéke) illetve a megyeszékhelyek pénzügyi eredményeit:
+<ul>
+  <li>Budapest patikái mindösszesen + 6 milliárdos többlet vényes forintforgalmat realizálhattak, míg az agglomeráció patikái csak +121 milliós többletet nyerhettek 2020-ban (ez kb. 50-szeres különbség): a nagyértékű gyógyszeres kezelések lehetnek az okok;</li>
+  <li>hasonló okok miatt a szegedi patikák +2,7 milliárd, a debreceni patikák +2,3 milliárd forint többletet forgattak forintálisan (a helyi lakosok által, illetve a helyi patikákban beváltott vények egyenlegét nézve);</li>
+  <li>a további "milliárdosok": a gyulai, a nyíregyházi, a pécsi járások;</li>
+    <li>öt magasan nyereséges "tengelyt" emelnék ki: a Budapest-Szeged tengelyt, a Debrecen-Kisvárda tengelyt, az Eger-Miskolc tengelyt, a Tapolca-Pécs tengelyt és a nyugati határszél két járását. Ezek mögött létező kapcsolat-rendszerek és munkamegosztások húzódhatnak meg (de ez csak találgatás, konkrét adatok híján).</li>
+</ul>
+</p><br>
+<p>Tekintve, hogy a forrásadatok Excel-formátumban, szerkesztett formában állnak rendelkezésre, ésszerű ráfordítással csak a járási szintű adatok vizsgálata értelmes, a nemek és a korcsoportok, illetve a jogcímek szerinti alábontások elérése és az eredmények bemutatása meghaladják ezen projekt kereteit.</p>
+<p>Jelen tanulmány magánvéleményt fogalmaz meg.</p>
+<p>Indexkép forrása: Pexels/Pixabay</p>
+
+<footer class="sav">
+  <div><a href="impressum.html">Impresszum</a></div>
+ <div><a href="discl.html">Disclaimer</a></div>
+ <div>LinkedIn dr-gabor-tamas-ferenc | Gmail samatrogab</div>
+ </footer>
+
+</div>
+
+</body>
+</html>
