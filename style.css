@@ -72,10 +72,9 @@ button{
     position: sticky;
     top: 0;
     border: 2vw;
-	//background-color: rgb(32, 178, 170);
-	background-color: SlateBlue;
-	font-size: 3vw;
-	font-family: Lucida Console;
+    background-color: SlateBlue;
+    font-size: 3vw;
+    font-family: Lucida Console;
 }
 
 
