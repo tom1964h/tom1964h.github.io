@@ -66,6 +66,13 @@ a:hover {
 	margin: 1%;
 }
 
+.back {
+	float: right;
+	background-color: SlateBlue;
+    font-size: 1vw;
+    font-family: Lucida Console;
+}
+
 button{
 	float: right;
 	position: -webkit-sticky;
