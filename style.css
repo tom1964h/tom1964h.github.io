@@ -93,6 +93,17 @@ button{
   /*padding-top: 100%;*/
 }
 
+.pdf-container {
+	position: relative;
+	overflow: auto;
+	width: 75%;
+	/*padding-top: 56.25%;*/
+	padding-top: 75%;
+	/*padding-top: 100%;*/
+	align-self: center;
+  }
+  
+
 .responsive-iframe {
   position: absolute;
   top: 0;
