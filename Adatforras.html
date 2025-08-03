@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>
+      Adatforrás - a magyar támogatott gyógyszer- és GYSE-piac adatai.md
+    </title>
+    <style></style>
+  </head>
+  <body id="preview">
+    <h1 class="code-line" data-line-start="0" data-line-end="1">
+      <a id="Adatforrs__a_magyar_tmogatott_gygyszer_s_GYSEpiac_adatai_0"></a
+      >Adatforrás - a magyar támogatott gyógyszer- és GYSE-piac adatai
+    </h1>
+    <h2 class="code-line" data-line-start="1" data-line-end="2">
+      <a id="_Trsadalombiztostsi_adatok_bemutatsa__1"></a
+      ><em>Társadalombiztosítási adatok bemutatása</em>
+    </h2>
+    <p class="has-line-data" data-line-start="3" data-line-end="5">
+      A
+      <a
+        href="https://hu.wikipedia.org/wiki/T%C3%A1rsadalombiztos%C3%ADt%C3%A1s#:~:text=A%20t%C3%A1rsadalombiztos%C3%ADt%C3%A1s%20(r%C3%B6viden%20tb)%20az,saj%C3%A1t%20munk%C3%A1jukkal%20gondoskodni%2C%20tartal%C3%A9kk%C3%A9pz%C3%A9sre%20k%C3%B6telezik."
+        >társadalombiztosítás</a
+      >
+      a társadalom működésének fontos része.<br />
+      Magyarországon a <em>felosztó-kiróvó</em> társadalombiztosítási
+      (<strong>TB</strong>-) rendszernek és az ennek működtetését végző állami
+      adatfeldolgozó szolgáltatásoknak köszönhetően egyedülállóan teljes és
+      komplex egészségügyi adatvagyon halmozódott fel.
+    </p>
+    <p class="has-line-data" data-line-start="6" data-line-end="7">
+      A közvetlen lakossági (kiskereskedelmi), ártámogatott gyógyszer- és
+      gyógyászati segédeszköz-ellátást több törvény és rendelet szabályozza,
+      többek között, pl.:
+    </p>
+    <ul>
+      <li class="has-line-data" data-line-start="7" data-line-end="9">
+        a
+        <a href="https://net.jogtar.hu/jogszabaly?docid=99700217.KOR"
+          ><em
+            >217/1997. (XII. 1.) Korm. rendelet<br />
+            a kötelező egészségbiztosítás ellátásairól szóló 1997. évi LXXXIII.
+            törvény végrehajtásáról</em
+          ></a
+        >
+        illetve pl.
+      </li>
+      <li class="has-line-data" data-line-start="9" data-line-end="12">
+        az
+        <a href="https://net.jogtar.hu/jogszabaly?docid=a0300001.esc"
+          ><em
+            >1/2003. (I. 21.) ESzCsM rendelet<br />
+            a társadalombiztosítási támogatással rendelhető gyógyszerekről és a
+            támogatás összegéről</em
+          ></a
+        >
+      </li>
+    </ul>
+    <p class="has-line-data" data-line-start="12" data-line-end="13">
+      További információk a gyógyszerek árának támogatásáról lásd:
+      <a
+        href="https://egeszsegvonal.gov.hu/gyogyszerek-a-z/gyogyszertamogatasi-rendszer.html"
+        >gyógyszerek ártámogatása</a
+      >.
+    </p>
+    <p class="has-line-data" data-line-start="14" data-line-end="15">
+      Az adatok szempontjából meghatározó a havi granularitás (mert
+      kiskereskedelmi örökség a <em>havi zárás</em> gyakorlata és ez a
+      TB-elszámolások ütemezésében is tovább él). Az
+      <em>elszámolási adatok</em> a NEAK rendszerébe érkeznek, pontosan
+      meghatározott felépítésben, lásd bővebben itt:
+      <a
+        href="https://www.neak.gov.hu/letoltheto/ATFO_dok/gyogyszer/feher_konyv"
+        >BÉVER elszámolás - Fehér Könyv</a
+      >.
+    </p>
+    <p class="has-line-data" data-line-start="16" data-line-end="17">
+      Az elszámolási rendszer fontos eleme a központi terméktörzs, a
+      <a
+        href="https://www.neak.gov.hu/felso_menu/szakmai_oldalak/gyogyszer_segedeszkoz_gyogyfurdo_tamogatas/egeszsegugyi_vallalkozasoknak/pupha/Publikus_Gyogyszertorzs"
+        >Publikus Gyógyszertörzs (PUPHA)</a
+      >, hiszen az elszámolt gyógyszerek központi azonosítása alapvetően fontos:
+      a TB-elszámolások egyik tengelye a TTT-kódolás (termékkódok). A NEAK
+      gyógyszertörzs adatainál a kezdetektől fogva (kb. 30 éve) alkalmazzák ezt
+      a kódolási technikát. Ez a rendszer erősen veszített következetességéből
+      az elmúlt években. Az eredetileg minden támogatott (sőt: nemtámogatott)
+      gyógyszerre alkalmazni kívánt azonosítási rendszer csoportkódjait a 9
+      jegyű kódok első két karakterében találhatjuk:
+    </p>
+    <ul>
+      <li class="has-line-data" data-line-start="17" data-line-end="20">
+        1-essel kezdődő TTT-vel kódolják a “magisztrális” készítményeket:
+        <ul>
+          <li class="has-line-data" data-line-start="18" data-line-end="19">
+            11-es, 13-as és 14-es kódok: gyógyszeranyagok és gyógynövények
+            (ezekből készítenek a patikákban gyógyszert vagy szerelik ki)
+          </li>
+          <li class="has-line-data" data-line-start="19" data-line-end="20">
+            12-es kódok: gyógyszertári készítmények a FoNo (szabványos
+            vényminták szerint): pl. kanalas orvosságok vagy kúpok
+          </li>
+        </ul>
+      </li>
+      <li class="has-line-data" data-line-start="20" data-line-end="24">
+        a 2-essel kezdődő TTT-kódok “gyári gyógyszerspecialitások”:
+        <ul>
+          <li class="has-line-data" data-line-start="21" data-line-end="22">
+            21-es, 27-es kódok: gyógyszerkészítmények
+          </li>
+          <li class="has-line-data" data-line-start="22" data-line-end="23">
+            22-es kódok: immunterápiás készítmények és vakcinák (többnyire)
+          </li>
+          <li class="has-line-data" data-line-start="23" data-line-end="24">
+            23-as kódok: gyógytápszerek, speciális táplálási igényt kielégítő
+            készítmények
+          </li>
+        </ul>
+      </li>
+      <li class="has-line-data" data-line-start="24" data-line-end="25">
+        51-es kóddal kezdődnek a csomagolóanyagok kódjai, amelyeket a
+        gyógyszertári gyógyszerkészítéshez használnak fel (pl. flakonok,
+        palackok, tégelyek, stb.)
+      </li>
+      <li class="has-line-data" data-line-start="25" data-line-end="27">
+        61-es kóddal kezdődnek azok a rekordok, amelyekkel a gyógyszertári
+        gyógyszerkészítés során alkalmazott eljárásokat kódolják, pl. mérés,
+        elegyítés, kenőcs készítése, stb.
+      </li>
+    </ul>
+    <p class="has-line-data" data-line-start="27" data-line-end="28">
+      A NEAK elszámolórendszerébe havonta beérkező többmillió elszámolási
+      rekordból különböző felösszegzésekkel állítják elő azt a publikus forgalmi
+      adatbázist, amelyet MS ACCESS <strong>.mdb</strong> formátumban tesznek
+      közzé. A forgalmi adatok közvetlen elérése:
+    </p>
+    <ul>
+      <li class="has-line-data" data-line-start="28" data-line-end="29">
+        lásd
+        <a
+          href="https://neak.gov.hu/felso_menu/szakmai_oldalak/publikus_forgalmi_adatok/gyogyszer_forgalmi_adatok/gyogyszer_forgalmi_adatok"
+          >Gyógyszerforgalmi adatok</a
+        >
+      </li>
+      <li class="has-line-data" data-line-start="29" data-line-end="31">
+        lásd
+        <a
+          href="https://neak.gov.hu/felso_menu/szakmai_oldalak/publikus_forgalmi_adatok/gyse_forgalmi_adatok/gyse_forg_adat"
+          >Gyógyászati segédeszköz forgalmi adatok</a
+        >
+      </li>
+    </ul>
+    <p class="has-line-data" data-line-start="31" data-line-end="32">
+      A forrásadatok oldalán rendre megtalálható egy-egy link, amely az
+      adatmezők leírására mutat.
+    </p>
+    <p class="has-line-data" data-line-start="33" data-line-end="34">
+      Gyógyszer területen havonta 100-120 ezer sornyi adatot publikálnak így, ez
+      évente 1,2 - 1,4 millió sort jelent. Az adatbázisban vannak megyei és
+      országos bontású táblák is. Mindegyikben termékszintű forgalmi adatok
+      találhatóak.
+    </p>
+    <p class="has-line-data" data-line-start="35" data-line-end="36">
+      Érdekesség, hogy a PUPHA (és így a forgalmi adatok is)
+      <a href="https://atcddd.fhi.no/atc_ddd_index/">WHO ATC</a> rendszert
+      használ, ami eltérhet az
+      <a href="https://www.ephmra.org/anatomical-classification">EPHMRA</a> ATC
+      kódkiosztásától.
+    </p>
+    <p class="has-line-data" data-line-start="37" data-line-end="38">
+      A havi felösszegzett tény-adatokat a NEAK (és elődje az OEP) régebb óta
+      közöl:
+    </p>
+    <ul>
+      <li class="has-line-data" data-line-start="38" data-line-end="39">
+        a 2003–2005 közötti időszakról elérhető források
+        <strong>.pdf</strong> formátumban tölthetők le, feldolgozásuk nem
+        vállalható;
+      </li>
+      <li class="has-line-data" data-line-start="39" data-line-end="41">
+        a 2006-tól napjainkig terjedő időszakban viszont feldolgozható,
+        <strong>dBase III</strong> illetve
+        <strong>MS-Access</strong> formátumban érhetőek el adatok.
+      </li>
+    </ul>
+  </body>
+</html>

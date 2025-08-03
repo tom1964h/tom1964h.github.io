@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>
+      Adatforrás - a magyar támogatott gyógyszer- és GYSE-piac adatai.md
+    </title>
+    <style></style>
+  </head>
+  <body id="preview">
+    <h1 class="code-line" data-line-start="0" data-line-end="1">
+      <a id="A_tmogatott_gygyszerpiac_adatainak_feldolgozsa_0"></a>A támogatott
+      gyógyszerpiac adatainak feldolgozása
+    </h1>
+    <h2 class="code-line" data-line-start="1" data-line-end="2">
+      <a id="_Hevenyszett_mdszertan_a_publikus_adatok_elemzshez__1"></a
+      ><em>Hevenyészett módszertan a publikus adatok elemzéséhez</em>
+    </h2>
+    <p class="has-line-data" data-line-start="3" data-line-end="4">
+      Az elemzéseim során a magyarországi támogatott gyógyszerellátás idősoros
+      (publikus) tényadatait dolgozom fel.
+    </p>
+    <p class="has-line-data" data-line-start="5" data-line-end="6">
+      Látni kell, hogy a gyógyszertárakban alapvetően kiskereskedelmi
+      tranzakciók történnek. Ami egyedivé teszi, az az, hogy különleges
+      információkkal ellátva, minden esetben szakmai segítséggel juthatunk
+      gyógyszerhez, illetve az, hogy sokszor nem annyit fizetünk érte, amennyi
+      az ára, hanem kevesebbet — ez a TB-támogatás. A patikák ezeket az
+      összegeket megelőlegzik a betegeknek majd később visszaigénylik a
+      társadalombiztosítástól tételes elszámolás formájában.
+    </p>
+    <p class="has-line-data" data-line-start="7" data-line-end="8">
+      A gyógyszerek árához nyújtott támogatás igénylése és kezelése éves szinten
+      többszáz milliárd forintot mozgató pénzügyi folyamat (közfinanszírozás),
+      amelynek adatfeldolgozási háttere is részletesen szabályozott (<a
+        href="https://www.neak.gov.hu/felso_menu/szakmai_oldalak/informatika/bever-elszamolas/bever_elsz"
+        >BÉVER-elszámolás oldal</a
+      >
+      a NEAK honlapján). Itt megtekinthető az eredeti adatforrás is (a patikai
+      elszámolások rekordszerkezete), amelyből a NEAK havi rendszerességgel
+      riportokat készít a közfinanszírozási elszámolások alapján és közzéteszi
+      honlapján.
+    </p>
+    <p class="has-line-data" data-line-start="9" data-line-end="10">
+      A havi felösszegzett tény-adatokat a NEAK (és elődje az OEP) régebb óta
+      közöl:
+    </p>
+    <ul>
+      <li class="has-line-data" data-line-start="10" data-line-end="11">
+        a 2003–2005 közötti időszakról elérhető források
+        <strong>.pdf</strong> formátumban tölthetők le, feldolgozásuk nem
+        vállalható;
+      </li>
+      <li class="has-line-data" data-line-start="11" data-line-end="13">
+        a 2006-tól napjainkig terjedő időszakban viszont feldolgozható,
+        <strong>dBase III</strong> illetve
+        <strong>MS-Access</strong> formátumban érhetőek el adatok.
+      </li>
+    </ul>
+    <p class="has-line-data" data-line-start="13" data-line-end="14">
+      A lassan húsz évadnyi (havi bontású) adathalmaz kezelhetetlen számosságú
+      file-t jelent (2006–2024 augusztus időszakban 224 állomány), ezért volt
+      szükséges használhatóbb állapotba hozni az adathalmazt: a havi partíciók
+      helyett éves táblák alkalmazása ésszerűnek tűnik.
+    </p>
+    <p class="has-line-data" data-line-start="15" data-line-end="16">
+      Fontos szempont még a <strong>Jupyter</strong> /
+      <strong>Pandas</strong> illetve a <strong>Power BI</strong> könnyű
+      elérhetőség biztosítása is. Mindehhez egy kisebb erőforrásigényű, könnyen
+      telepíthető adatbázismotort (<strong>SQLite3</strong>) választottam.
+    </p>
+    <p class="has-line-data" data-line-start="17" data-line-end="18">
+      Python / Jupyter környezetben <strong>Pandas</strong>,
+      <strong>Numpy</strong>, <strong>PyODBC</strong>,
+      <strong>SQLite3</strong> és <strong>OS</strong> csomagok segítségével egy
+      áttöltő alkalmazást fejlesztettem, amely naplózza az MS-Access file-ok
+      olvasását és az adatbázis-írást. Az adatokat havi helyett éves partíciókba
+      rendeztettem. A leválogatást megkönnyítik a view-k összeállítása. A logika
+      Pandas megvalósítás. A vizualizáció többféle programot használok igény
+      szerint:
+    </p>
+    <ul>
+      <li class="has-line-data" data-line-start="18" data-line-end="19">
+        Excel-t természetesen az ad hoc feladatokra (hiszen az Excel örök…),
+      </li>
+      <li class="has-line-data" data-line-start="19" data-line-end="20">
+        PowerBI-ban szabvány dashboard-okat építettem, a gyorsjelentések pl.
+        ezen a platformon készülnek,
+      </li>
+      <li class="has-line-data" data-line-start="20" data-line-end="22">
+        Datawrapper-t az adatújságíráshoz használok.
+      </li>
+    </ul>
+    <p class="has-line-data" data-line-start="22" data-line-end="23">
+      A folyamatos feldolgozás során évek alatt egy közös adatbázist építettem
+      SQLite segítségével (ez jelenleg több mint 24 millió rekordot tárol),
+      amelyből szabvány SQL-lekérdezésekkel állíthatók elő a kívánt
+      statisztikák. Előnye, hogy Google <strong>COLAB</strong> környeztettel
+      kompatibilis ez a tárolási mód.
+    </p>
+    <p class="has-line-data" data-line-start="24" data-line-end="25">
+      Néhány fontos tudnivaló (amolyan <em>disclaimer</em>):
+    </p>
+    <ul>
+      <li class="has-line-data" data-line-start="25" data-line-end="26">
+        ezek az adatsorok nem a közvetlen gyógyszertári kiskereskedelem teljes
+        adatai: a támogatott adatok ennek egy részét jelentik csak (csökkenő
+        mértékben, kb 60%); ez fontos különbségtétel, mert számtalanszor
+        jelentetnek meg egyes datascience cégek elemzéseket a
+        <em>teljes</em> gyógyszerpiacról, kizárólag a NEAK-adataira támaszkodva;
+      </li>
+      <li class="has-line-data" data-line-start="26" data-line-end="27">
+        bár a TB-elszámolásokban és a publikus riportokban is az un. TTT-kód
+        szerepel, mint termékazonosító, tudnivaló, hogy egy-egy terméknek évek
+        alatt több TTT-kódja, sőt több forgalmazója is lehet — megszorításokkal
+        használható ez a kódolás;
+      </li>
+      <li class="has-line-data" data-line-start="27" data-line-end="28">
+        bár időben változhat egy-egy termék TTT-kódja, de ezen kód első 2
+        karaktere jellemzően termékcsoportokat kódol: gyógyszer(alap)anyagok és
+        drogok, galenikumok, gyári gyógyszer-specialitások, kötszerek,
+        gyógyászati segédeszközök, csomagoló-anyagok és magisztrális készítési
+        eljárások, stb. — egyes kimutatásokban ezen kódolást használom;
+      </li>
+      <li class="has-line-data" data-line-start="28" data-line-end="29">
+        a havi riportokban külön dimenzió a recept-típus: lehet M (azaz
+        magisztrális) illetve G (azaz gyári gyógyszerspecialitás) a recept
+        típusa; az ársávok illetve a nettó kiskereskedelmi árrések számításánál
+        kizárólag G-típusú rekordokat veszek figyelembe;
+      </li>
+      <li class="has-line-data" data-line-start="29" data-line-end="31">
+        körültekintést igényelnek továbbá az ATC-kódok, a brand-megnevezések és
+        kvázi-térítési díj mezők használata is: szakmai ellenőrzés nélkül
+        félrevezető adatokat számolhatunk.
+      </li>
+    </ul>
+    <p class="has-line-data" data-line-start="31" data-line-end="32">
+      <strong>Fontos: ezek az elemzések magánvéleményt tükröznek.</strong>
+    </p>
+  </body>
+</html>
