@@ -115,29 +115,51 @@ button{
 }
 
 /* Javasolta a Google Gemini: */
+/* A teljes egységet összefogó keret */
+.substack-wrapper {
+  max-width: 480px;
+  margin: 20px 0;
+  border: 1px solid #eee;
+  border-radius: 8px;
+  overflow: hidden; /* Lekerekíti a sarkokat az iframe körül is */
+  background: #f9f9f9;
+}
+
+/* A felirat stílusa */
+.substack-label {
+  padding: 10px;
+  background: #fff;
+  border-bottom: 1px solid #eee;
+  text-align: center;
+  font-weight: bold;
+}
+
+.substack-label a {
+  color: #333;
+  text-decoration: none;
+  font-size: 0.9rem;
+}
+
+.substack-label a:hover {
+  color: #ff6600; /* Substack-szerű narancs szín hoverre */
+}
+
+/* Reszponzív iFrame konténer */
 .substack-container {
   position: relative;
   width: 100%;
-  max-width: 480px; /* Megtartjuk az eredeti maximum szélességet */
-  margin: 20px 0;   /* Egy kis távolság alul-felül */
+  aspect-ratio: 3 / 2;
 }
 
 .substack-container iframe {
   width: 100%;
-  aspect-ratio: 3 / 2; /* Az eredeti 480x320 arány megtartása (3:2) */
+  height: 100%;
   border: none;
 }
 
-/* Régebbi böngészők támogatásához, ha az aspect-ratio nem működne: */
-@supports not (aspect-ratio: 3 / 2) {
-  .substack-container {
-    padding-top: 66.66%; /* (320 / 480) * 100 */
-    height: 0;
-  }
-  .substack-container iframe {
-    position: absolute;
-    top: 0;
-    left: 0;
-    height: 100%;
+/* Mobil optimalizálás: ha nagyon kicsi a kijelző, a felirat is kisebb lesz */
+@media (max-width: 400px) {
+  .substack-label a {
+    font-size: 0.8rem;
   }
 }
