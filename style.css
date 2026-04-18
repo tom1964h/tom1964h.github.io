@@ -118,10 +118,10 @@ button{
 /* A teljes egységet összefogó keret */
 .substack-wrapper {
   max-width: 480px;
-  margin: 20px 0;
+  margin: 20px auto; /* A 20px az alsó-felső távolság, az 'auto' középre helyezi */
   border: 1px solid #eee;
   border-radius: 8px;
-  overflow: hidden; /* Lekerekíti a sarkokat az iframe körül is */
+  overflow: hidden;
   background: #f9f9f9;
 }
 
